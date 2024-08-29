@@ -18,7 +18,7 @@ jobs:
           terraform_version: "1.6.1"
 
       - name: Configure Google Cloud Credentials
-        uses: google-github-actions/auth@v0
+        uses: google-github-actions/auth@v1  # Updated to use the stable version
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: terraform-state
-          path: terraform.tfstate
+          path: terraform.tfstate  # Specify the path to the Terraform state file
